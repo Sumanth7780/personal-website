@@ -13,9 +13,9 @@
   </head>
 
   <body>
-    <div class="floating-elements"></div>
+    <div class="floating-elements" aria-hidden="true"></div>
 
-    <div class="container">
+    <main class="container">
       <h1 id="valentineTitle"></h1>
 
       <!-- Music -->
@@ -26,19 +26,19 @@
         </audio>
       </div>
 
-      <!-- ✅ START PAGE (Valentine Question) -->
-      <div class="question-section" id="question3">
-        <h2 id="question3Text"></h2>
+      <!-- ✅ Page 1 -->
+      <section class="question-section" id="page1">
+        <h2 id="page1Text"></h2>
 
         <div class="btn-row">
-          <button class="cute-btn final-yes" id="yesBtn3"></button>
-          <button class="cute-btn" id="noBtn3"></button>
+          <button class="cute-btn" id="yesBtn">Yes!</button>
+          <button class="cute-btn" id="noBtn">No</button>
         </div>
-      </div>
+      </section>
 
-      <!-- ✅ Love meter page -->
-      <div class="question-section hidden" id="question2">
-        <h2 id="question2Text"></h2>
+      <!-- ✅ Page 2 -->
+      <section class="question-section hidden" id="page2">
+        <h2 id="page2Text"></h2>
 
         <div class="love-meter">
           <input
@@ -49,28 +49,32 @@
             class="slider"
             id="loveMeter"
           />
-          <p>
+
+          <p class="meter-text">
             <span class="love-value-container">
-              <span id="startText"></span>
-              (<span id="loveValue">100</span>%)
+              <span id="startText"></span> (<span id="loveValue">100</span>%)
             </span>
-            <span id="extraLove" class="hidden"></span>
           </p>
+
+          <p id="extraLove" class="extra-love hidden"></p>
         </div>
 
-        <button class="cute-btn" id="nextBtn"></button>
-      </div>
-    </div>
+        <button class="cute-btn" id="nextBtn">Next ❤️</button>
+      </section>
 
-    <!-- ✅ Message Popup -->
-    <div class="modal hidden" id="messageModal">
-      <div class="modal-content">
-        <h2 id="modalTitle"></h2>
-        <div class="modal-body" id="modalMessage"></div>
-        <div class="modal-emojis" id="modalEmojis"></div>
-        <button class="cute-btn" id="modalCloseBtn"></button>
-      </div>
-    </div>
+      <!-- ✅ Page 3 -->
+      <section class="question-section hidden" id="page3">
+        <h2 id="page3Title"></h2>
+
+        <div class="message-card">
+          <p id="finalMessage"></p>
+        </div>
+
+        <div class="btn-row">
+          <button class="cute-btn" id="backBtn">Back</button>
+        </div>
+      </section>
+    </main>
 
     <script src="./config.js"></script>
     <script src="./theme.js"></script>

@@ -1,17 +1,14 @@
-function applyTheme() {
-  const config = window.VALENTINE_CONFIG;
+window.addEventListener("DOMContentLoaded", () => {
+  const c = window.VALENTINE_CONFIG;
+
   const root = document.documentElement;
+  root.style.setProperty("--bg1", c.colors.backgroundStart);
+  root.style.setProperty("--bg2", c.colors.backgroundEnd);
+  root.style.setProperty("--btn", c.colors.buttonBackground);
+  root.style.setProperty("--btnHover", c.colors.buttonHover);
+  root.style.setProperty("--txt", c.colors.textColor);
 
-  root.style.setProperty("--background-color-1", config.colors.backgroundStart);
-  root.style.setProperty("--background-color-2", config.colors.backgroundEnd);
-  root.style.setProperty("--button-color", config.colors.buttonBackground);
-  root.style.setProperty("--button-hover", config.colors.buttonHover);
-  root.style.setProperty("--text-color", config.colors.textColor);
-
-  root.style.setProperty("--float-duration", config.animations.floatDuration);
-  root.style.setProperty("--float-distance", config.animations.floatDistance);
-  root.style.setProperty("--bounce-speed", config.animations.bounceSpeed);
-  root.style.setProperty("--heart-explosion-size", config.animations.heartExplosionSize);
-}
-
-window.addEventListener("DOMContentLoaded", applyTheme);
+  root.style.setProperty("--floatDuration", c.animations.floatDuration);
+  root.style.setProperty("--floatDistance", c.animations.floatDistance);
+  root.style.setProperty("--bounceSpeed", c.animations.bounceSpeed);
+});

@@ -1,14 +1,13 @@
 :root {
-  --background-color-1: #ffafbd;
-  --background-color-2: #ffc3a0;
-  --button-color: #ff6b6b;
-  --button-hover: #ff8787;
-  --text-color: #ff4757;
+  --bg1: #ffafbd;
+  --bg2: #ffc3a0;
+  --btn: #ff6b6b;
+  --btnHover: #ff8787;
+  --txt: #ff4757;
 
-  --float-duration: 15s;
-  --float-distance: 50px;
-  --bounce-speed: 0.5s;
-  --heart-explosion-size: 1.5;
+  --floatDuration: 16s;
+  --floatDistance: 50px;
+  --bounceSpeed: 0.6s;
 }
 
 * {
@@ -18,12 +17,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, var(--background-color-1), var(--background-color-2));
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  color: #222;
 }
 
 /* Floating emojis */
@@ -34,52 +33,46 @@ body {
   z-index: 0;
 }
 
-.heart,
-.bear {
+.float-emoji {
   position: absolute;
-  font-size: 2rem;
-  animation: float var(--float-duration) linear infinite;
+  font-size: 1.8rem;
   opacity: 0.9;
+  animation: floatUp var(--floatDuration) linear infinite;
 }
 
-@keyframes float {
+@keyframes floatUp {
   0% {
     transform: translateY(110vh) translateX(0);
   }
   100% {
-    transform: translateY(-120px) translateX(var(--float-distance));
+    transform: translateY(-140px) translateX(var(--floatDistance));
   }
 }
 
-/* Main box */
+/* Container card */
 .container {
-  z-index: 2;
+  z-index: 1;
+  width: min(760px, 92vw);
   background: rgba(255, 255, 255, 0.92);
-  padding: 28px;
   border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
   text-align: center;
-  max-width: 680px;
-  width: min(680px, 92vw);
   margin: 18px;
 }
 
 h1 {
   font-family: "Dancing Script", cursive;
   font-weight: 700;
-  color: var(--text-color);
-  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--txt);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
   margin: 0 0 10px;
 }
 
 h2 {
-  color: var(--text-color);
-  margin: 16px 0 12px;
-  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
-}
-
-.question-section {
-  margin-top: 8px;
+  color: var(--txt);
+  margin: 14px 0 12px;
+  font-size: clamp(1.1rem, 2.3vw, 1.6rem);
 }
 
 .hidden {
@@ -94,30 +87,30 @@ h2 {
 }
 
 .cute-btn {
-  background: var(--button-color);
+  background: var(--btn);
   border: none;
   padding: 10px 18px;
-  margin: 10px 6px;
   border-radius: 999px;
-  color: white;
+  color: #fff;
   font-size: 1.05rem;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.18s ease, background 0.18s ease;
 }
 
 .cute-btn:hover {
   transform: scale(1.06);
-  background: var(--button-hover);
+  background: var(--btnHover);
 }
 
+/* Music */
 .music-controls {
-  margin: 8px 0 10px;
+  margin: 10px 0 6px;
 }
 
 .music-btn {
   background: rgba(255, 255, 255, 0.7);
   color: #333;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 8px 12px;
   border-radius: 14px;
   cursor: pointer;
@@ -125,30 +118,19 @@ h2 {
 
 /* Love meter */
 .love-meter {
+  margin: 18px auto 10px;
   width: 100%;
-  margin: 18px auto 6px;
-  overflow: visible;
-  padding: 10px 0;
-}
-
-.love-meter p {
-  font-size: 1.05em;
-  margin: 12px 0 0;
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  text-align: center;
 }
 
 .slider {
   width: 100%;
   height: 24px;
-  background: linear-gradient(to right, #ff6b6b, #ff8787, #ffb8b8);
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
   border-radius: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #ff6b6b, #ff8787, #ffb8b8);
   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
 }
 
@@ -156,78 +138,57 @@ h2 {
   -webkit-appearance: none;
   width: 34px;
   height: 34px;
-  background: linear-gradient(135deg, #ff4757, #ff6b6b);
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
+  background: linear-gradient(135deg, #ff4757, #ff6b6b);
 }
 
 .slider::-moz-range-thumb {
   width: 34px;
   height: 34px;
-  background: linear-gradient(135deg, #ff4757, #ff6b6b);
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid white;
+  background: linear-gradient(135deg, #ff4757, #ff6b6b);
 }
 
-#extraLove {
+.meter-text {
+  margin: 12px 0 6px;
+  color: var(--txt);
+  font-weight: 600;
+}
+
+.extra-love {
+  margin: 10px auto 0;
+  max-width: 680px;
   color: #ff6b6b;
   font-weight: 700;
-  animation: bounce var(--bounce-speed) infinite alternate;
-  padding: 6px 10px;
-  border-radius: 12px;
   background: rgba(255, 107, 107, 0.12);
-}
-
-#extraLove.super-love {
-  background: rgba(255, 107, 107, 0.22);
-  font-size: 1.12em;
+  padding: 10px 12px;
+  border-radius: 14px;
+  animation: bounce var(--bounceSpeed) infinite alternate;
 }
 
 @keyframes bounce {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.12);
-  }
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
-/* ✅ Modal / Popup */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 18px;
-}
-
-.modal-content {
-  width: min(720px, 95vw);
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 22px;
-  padding: 22px;
-  text-align: center;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
-}
-
-.modal-body {
-  text-align: left;
-  white-space: pre-wrap;
-  margin: 12px 0;
+/* Page 3 message */
+.message-card {
+  margin-top: 10px;
+  background: rgba(255, 71, 87, 0.06);
+  border-radius: 18px;
+  padding: 14px;
   max-height: 55vh;
   overflow: auto;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(255, 71, 87, 0.06);
-  line-height: 1.5;
+  text-align: left;
+  line-height: 1.6;
 }
 
-.modal-emojis {
-  font-size: 1.9rem;
-  margin: 10px 0 14px;
+#finalMessage {
+  margin: 0;
+  white-space: pre-wrap; /* keeps your line breaks */
+  color: #222;
 }
