@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
@@ -18,23 +18,25 @@
     <div class="container">
       <h1 id="valentineTitle"></h1>
 
-      <!-- Music Player -->
+      <!-- Music -->
       <div id="musicControls" class="music-controls">
         <button id="musicToggle" class="music-btn">🎵 Play Music</button>
         <audio id="bgMusic" loop>
           <source id="musicSource" type="audio/mpeg" />
-          Your browser does not support the audio element.
         </audio>
       </div>
 
-      <!-- ✅ START PAGE = old "third question" -->
+      <!-- ✅ START PAGE (Valentine Question) -->
       <div class="question-section" id="question3">
         <h2 id="question3Text"></h2>
-        <button class="cute-btn final-yes" id="yesBtn3"></button>
-        <button class="cute-btn" onclick="moveButton(this)" id="noBtn3"></button>
+
+        <div class="btn-row">
+          <button class="cute-btn final-yes" id="yesBtn3"></button>
+          <button class="cute-btn" id="noBtn3"></button>
+        </div>
       </div>
 
-      <!-- Second Question (Love Meter) -->
+      <!-- ✅ Love meter page -->
       <div class="question-section hidden" id="question2">
         <h2 id="question2Text"></h2>
 
@@ -49,7 +51,8 @@
           />
           <p>
             <span class="love-value-container">
-              <span id="startText"></span> (<span id="loveValue">100</span>%)
+              <span id="startText"></span>
+              (<span id="loveValue">100</span>%)
             </span>
             <span id="extraLove" class="hidden"></span>
           </p>
@@ -59,18 +62,18 @@
       </div>
     </div>
 
-    <!-- ✅ Message Box / Modal -->
+    <!-- ✅ Message Popup -->
     <div class="modal hidden" id="messageModal">
       <div class="modal-content">
         <h2 id="modalTitle"></h2>
-        <p id="modalMessage"></p>
-        <p class="modal-emojis" id="modalEmojis"></p>
+        <div class="modal-body" id="modalMessage"></div>
+        <div class="modal-emojis" id="modalEmojis"></div>
         <button class="cute-btn" id="modalCloseBtn"></button>
       </div>
     </div>
 
-    <script src="config.js"></script>
-    <script src="theme.js"></script>
-    <script src="script.js"></script>
+    <script src="./config.js"></script>
+    <script src="./theme.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

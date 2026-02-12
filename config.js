@@ -1,7 +1,3 @@
-// ============================================
-// 💝 CUSTOMIZE YOUR VALENTINE'S WEBSITE HERE 💝
-// ============================================
-
 const CONFIG = {
   valentineName: "Jayathi",
   pageTitle: "Will You Be My Valentine? 💝",
@@ -11,7 +7,6 @@ const CONFIG = {
     bears: ["🧸", "🐻"],
   },
 
-  // We removed "first"
   questions: {
     second: {
       text: "How much do you love me?",
@@ -31,14 +26,13 @@ const CONFIG = {
     normal: "And beyond! 🥰",
   },
 
-  // ✅ This is your final message box content (EDIT THIS)
   finalMessageBox: {
     title: "Hi Jayathi 💌",
-    message: `Hi Jayathi, if your on this page that means you accepted to be my valentine thought I couldn't be there with you in person definitely next year if you renew our relationship 😂 jk you can't escape easily so no take back because u already took my heart ❤️
+    message: `Hi Jayathi, if your on this page that means you accepted to be my valentine thought I couldn't be there with you in person definitely next year if you renew our relationship 😂 jk you can't escape easily so no take back because u already took my heart ❤️ 
 
-  It's true that you fell for me first but trust me I'm sure I fell harder for you. Everytime you text or I think about you it puts smile on me.
+It's true that you fell for me first but trust me I'm sure I fell harder for you. Everytime you text or I think about you it puts smile on me. 
 
-  I know we come from completely different perspectives. I'm not looking for trade I'm just looking for you and us, I don't know a lot (sometimes I'm not that good at picking things or if what I say makes sense lol) but I'm willing to be anything which requires because you are worth fighting for. I'm not coming with idea of a pefer scenarios or a movie couple, what I care about is you I don't care if you call once in a while or we talk daily( well can't say not all the time but u get it 😜), just remember whatever the case at the other end I'm always willing to wait for you bangaram 🥰 because I know your doing what you can with things you can handle, I will do my best. We talked right I'm the anchor your the sail.`,
+I know we come from completely different perspectives. I'm not looking for trade I'm just looking for you and us, I don't know a lot (sometimes I'm not that good at picking things or if what I say makes sense lol) but I'm willing to be anything which requires because you are worth fighting for. I'm not coming with idea of a pefer scenarios or a movie couple, what I care about is you I don't care if you call once in a while or we talk daily( well can't say not all the time but u get it 😜), just remember whatever the case at the other end I'm always willing to wait for you bangaram 🥰 because I know your doing what you can with things you can handle, I will do my best. We talked right I'm the anchor your the sail.`,
     emojis: "💖🌹🧸✨❤️",
     buttonText: "Aww ❤️",
   },
